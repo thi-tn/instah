@@ -10,6 +10,9 @@ import UIKit
 
 class HomeFeedCell: UITableViewCell {
 
+    @IBOutlet var feedImageView: UIImageView!
+    @IBOutlet var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

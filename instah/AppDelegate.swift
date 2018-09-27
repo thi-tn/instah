@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  instah
@@ -24,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Successful loggout")
                 // Load and show the login view controller
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginViewController = storyboard.instantiateViewController(withIdentifier: "PUT_YOUR_LOGIN_VC_ID_HERE")
+                let loginViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
                 self.window?.rootViewController = loginViewController
             }
         })

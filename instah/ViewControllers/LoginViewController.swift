@@ -29,7 +29,8 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackground { (success, error) in
             if success {
                 print("created a user")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)            } else {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
                 print(error?.localizedDescription)
                 if error?._code == 202 {
                     print("user name is taken")
