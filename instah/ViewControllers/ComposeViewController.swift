@@ -8,20 +8,58 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
-
-//    @IBAction func ShareAction(_ sender: Any) {
-//        self.performSegue(withIdentifier: "composeSegue", sender: nil)
-//
-//    }
-
+class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet var cameraImageView: UIImageView!
     @IBAction func onShare(_ sender: Any) {
-        self.performSegue(withIdentifier: "composeSegue", sender: nil)
+        
     }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        // Get the image captured by the UIImagePickerController
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        // Do something with the images (based on your use case)
+        
+        // Dismiss UIImagePickerController to go back to your original view controller
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        //_ = tapGestureRecognizer.view as! UIImageView
+        
+        // Your action
+        let vc = UIImagePickerController()
+        vc.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        vc.allowsEditing = true
+        //vc.sourceType = UIImagePickerControllerSourceType.camera
+        
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is available 📸")
+            vc.sourceType = .camera
+        } else {
+            print("Camera 🚫 available so we will use photo library instead")
+            vc.sourceType = .photoLibrary
+        }
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        cameraImageView.isUserInteractionEnabled = true
+        cameraImageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {

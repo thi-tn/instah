@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AuthenticatedViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,7 @@
         <!--Home Feed-->
         <scene sceneID="9t9-rI-SOU">
             <objects>
-                <viewController id="0So-1G-xHY" customClass="HomeFeedTableViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" id="0So-1G-xHY" customClass="HomeFeedTableViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJQ-bl-szs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Brq-hf-WeI" id="ecR-J8-QJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7A-jq-zPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,7 +130,7 @@
         <!--Compose View Controller-->
         <scene sceneID="IHm-YV-BZ2">
             <objects>
-                <viewController id="5L2-k3-5Io" customClass="ComposeViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeViewController" id="5L2-k3-5Io" customClass="ComposeViewController" customModule="instah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJX-3b-d4y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +138,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZ9-kx-6Pg">
                                 <rect key="frame" x="16" y="96" width="114" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.62116525450000004" blue="0.64447234229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.62116525446319348" blue="0.64447234231078332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiv-ZL-I3T">
                                 <rect key="frame" x="139" y="96" width="209" height="30"/>
@@ -148,15 +153,24 @@
                         <viewLayoutGuide key="safeArea" id="p3b-ri-Qnj"/>
                     </view>
                     <navigationItem key="navigationItem" id="498-Vk-hKH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aHK-Hs-OsY"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aHK-Hs-OsY">
+                            <connections>
+                                <segue destination="suL-nX-OZL" kind="unwind" unwindAction="cancelToHomeFeedViewController:" id="uDa-l9-2c0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="YfM-Cs-cer">
                             <connections>
                                 <action selector="onShare:" destination="5L2-k3-5Io" id="oqk-hr-k3b"/>
+                                <segue destination="suL-nX-OZL" kind="unwind" unwindAction="cancelToHomeFeedViewController:" id="S1c-kV-klh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cameraImageView" destination="YZ9-kx-6Pg" id="4gL-UO-wyl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtD-Ra-r4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="suL-nX-OZL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4594" y="116"/>
         </scene>
