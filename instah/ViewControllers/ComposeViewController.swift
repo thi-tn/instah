@@ -7,23 +7,33 @@
 //
 
 import UIKit
+import Parse
 
 class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet var cameraImageView: UIImageView!
     @IBAction func onShare(_ sender: Any) {
-        
+        Post.postUserImage(image: cameraImageView.image, withCaption: captionLabel.text, withCompletion: {(succeeded, error) -> Void in
+            if succeeded {
+                print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.\n");
+            } else {
+                print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.\n", error)
+            }
+        })
+//        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeFeedViewNavigationController")
     }
     
+    @IBOutlet var captionLabel: UITextField!
     
-    func imagePickerController(_ picker: UIImagePickerController,
+    @objc func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
+        cameraImageView.image = editedImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)

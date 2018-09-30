@@ -71,19 +71,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-hf-WeI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-hf-WeI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="422" id="bw7-Jb-vFD" customClass="HomeFeedCell" customModule="instah" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeFeedCell" rowHeight="422" id="bw7-Jb-vFD" customClass="HomeFeedCell" customModule="instah" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bw7-Jb-vFD" id="gae-BO-rzK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="421.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lm1-2z-YSD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lm1-2z-YSD" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="-12" width="375" height="375"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -161,12 +161,12 @@
                         <barButtonItem key="rightBarButtonItem" title="Share" id="YfM-Cs-cer">
                             <connections>
                                 <action selector="onShare:" destination="5L2-k3-5Io" id="oqk-hr-k3b"/>
-                                <segue destination="suL-nX-OZL" kind="unwind" unwindAction="cancelToHomeFeedViewController:" id="S1c-kV-klh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cameraImageView" destination="YZ9-kx-6Pg" id="4gL-UO-wyl"/>
+                        <outlet property="captionLabel" destination="iiv-ZL-I3T" id="PT3-8S-Qpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtD-Ra-r4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,7 +177,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9zG-Bk-bHW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S34-0L-PKU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeFeedViewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="S34-0L-PKU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7m7-VP-XAt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

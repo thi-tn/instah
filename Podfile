@@ -7,6 +7,7 @@ target 'instah' do
 
   # Pods for instah
   pod 'Parse'
+  pod 'ParseUI'
   target 'instahTests' do
     inherit! :search_paths
     # Pods for testing

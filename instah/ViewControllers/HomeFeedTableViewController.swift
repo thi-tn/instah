@@ -15,9 +15,19 @@ class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet var tableView: UITableView!
     
+    var posts: [PFObject]!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if posts != nil {
+            return posts.count
+        } else {
+            return 0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFeedCell", for: indexPath) as! HomeFeedCell
-        
+        cell.post = posts[indexPath.row]
         return cell
     }
     
@@ -44,6 +54,24 @@ class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         
+        // construct PFQuery
+        let query = Post.query()
+        query?.order(byDescending: "createdAt")
+        query?.includeKey("author")
+        query?.limit = 20
+        
+        // fetch data asynchronously
+        query?.findObjectsInBackground { (posts, error) -> Void in
+            self.posts = posts
+            self.tableView.reloadData()
+            if let posts = posts {
+                // do something with the data fetched
+                
+            } else {
+                // handle error
+            }
+        }
+       
     }
 
     
@@ -54,15 +82,12 @@ class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     // MARK: - Table view data source
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+   
 
 
 }

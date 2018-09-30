@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class HomeFeedCell: UITableViewCell {
 
-    @IBOutlet var feedImageView: UIImageView!
+    @IBOutlet var feedImageView: PFImageView!
     @IBOutlet var descriptionLabel: UILabel!
+    
+    var post: PFObject! {
+        didSet {
+            self.descriptionLabel.text = post["caption"] as? String
+            self.feedImageView.file = post["image"] as? PFFile
+            self.feedImageView.loadInBackground()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
