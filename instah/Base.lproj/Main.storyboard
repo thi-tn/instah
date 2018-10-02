@@ -161,6 +161,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Share" id="YfM-Cs-cer">
                             <connections>
                                 <action selector="onShare:" destination="5L2-k3-5Io" id="oqk-hr-k3b"/>
+                                <segue destination="suL-nX-OZL" kind="unwind" unwindAction="cancelToHomeFeedViewController:" id="U9L-W6-ETi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

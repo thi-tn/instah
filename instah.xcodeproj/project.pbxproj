@@ -14,11 +14,11 @@
 		3F88385A215181A9001ED9C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F883858215181A9001ED9C3 /* LaunchScreen.storyboard */; };
 		3F883865215181A9001ED9C3 /* instahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F883864215181A9001ED9C3 /* instahTests.swift */; };
 		3F883870215181A9001ED9C3 /* instahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88386F215181A9001ED9C3 /* instahUITests.swift */; };
+		3F88B21221631EF90061F3ED /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88B21121631EF90061F3ED /* Post.swift */; };
 		3FBBE4EB215719400033AACA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EA215719400033AACA /* LoginViewController.swift */; };
 		3FBBE4ED2157E7030033AACA /* HomeFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EC2157E7030033AACA /* HomeFeedTableViewController.swift */; };
 		3FBBE4EF2157EFB50033AACA /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EE2157EFB50033AACA /* HomeFeedCell.swift */; };
 		3FBBE4F22157F5B40033AACA /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4F12157F5B40033AACA /* ComposeViewController.swift */; };
-		3FBBE4F621580D990033AACA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4F521580D990033AACA /* Post.swift */; };
 		53F097161D3ECBF4AEFA6D29 /* Pods_instahUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B8AF65F2DB0C080BF6A5E5 /* Pods_instahUITests.framework */; };
 		B136F80B3373E66770F1556B /* Pods_instahTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6149198DD10C654A2DAC5E2A /* Pods_instahTests.framework */; };
 		C4FA7DB863701ADB63BA6B12 /* Pods_instah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55CE6508BD1D8240E91A375 /* Pods_instah.framework */; };
@@ -55,11 +55,11 @@
 		3F88386B215181A9001ED9C3 /* instahUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instahUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F88386F215181A9001ED9C3 /* instahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instahUITests.swift; sourceTree = "<group>"; };
 		3F883871215181A9001ED9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F88B21121631EF90061F3ED /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3FBBE4EA215719400033AACA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FBBE4EC2157E7030033AACA /* HomeFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedTableViewController.swift; sourceTree = "<group>"; };
 		3FBBE4EE2157EFB50033AACA /* HomeFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
 		3FBBE4F12157F5B40033AACA /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
-		3FBBE4F521580D990033AACA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		45E6399DB41D336BE6433417 /* Pods-instahUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instahUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instahUITests/Pods-instahUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE65AE8981322BF15176AC2 /* Pods-instah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instah.release.xcconfig"; path = "Pods/Target Support Files/Pods-instah/Pods-instah.release.xcconfig"; sourceTree = "<group>"; };
 		6149198DD10C654A2DAC5E2A /* Pods_instahTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instahTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +132,7 @@
 				3F883858215181A9001ED9C3 /* LaunchScreen.storyboard */,
 				3F88385B215181A9001ED9C3 /* Info.plist */,
 				3FBBE4EE2157EFB50033AACA /* HomeFeedCell.swift */,
-				3FBBE4F521580D990033AACA /* Post.swift */,
+				3F88B21121631EF90061F3ED /* Post.swift */,
 			);
 			path = instah;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				3FBBE4EB215719400033AACA /* LoginViewController.swift in Sources */,
 				3FBBE4F22157F5B40033AACA /* ComposeViewController.swift in Sources */,
 				3F883852215181A8001ED9C3 /* ViewController.swift in Sources */,
-				3FBBE4F621580D990033AACA /* Post.swift in Sources */,
+				3F88B21221631EF90061F3ED /* Post.swift in Sources */,
 				3F883850215181A8001ED9C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

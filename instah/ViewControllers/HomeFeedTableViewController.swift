@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-
+import ParseUI
 
 
 class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -17,8 +17,10 @@ class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     var posts: [PFObject]!
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if posts != nil {
+            print(posts.count)
             return posts.count
         } else {
             return 0
@@ -61,16 +63,14 @@ class HomeFeedTableViewController: UIViewController, UITableViewDelegate, UITabl
         query?.limit = 20
         
         // fetch data asynchronously
-        query?.findObjectsInBackground { (posts, error) -> Void in
-            self.posts = posts
-            self.tableView.reloadData()
+        query?.findObjectsInBackground (block: { (posts: [PFObject]?, error: Error?) -> Void in
             if let posts = posts {
-                // do something with the data fetched
-                
+                self.posts = posts
+                self.tableView.reloadData()
             } else {
-                // handle error
+                print(error?.localizedDescription)
             }
-        }
+        })
        
     }
 

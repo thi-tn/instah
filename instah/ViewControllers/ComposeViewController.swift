@@ -21,7 +21,6 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.\n", error)
             }
         })
-//        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeFeedViewNavigationController")
     }
     
     @IBOutlet var captionLabel: UITextField!
