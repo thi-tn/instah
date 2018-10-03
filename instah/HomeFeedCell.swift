@@ -15,11 +15,14 @@ class HomeFeedCell: UITableViewCell {
     @IBOutlet var feedImageView: PFImageView!
     @IBOutlet var descriptionLabel: UILabel!
     
-    var post: PFObject! {
+    @IBOutlet var likeCountLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel!
+    var post: Post! {
         didSet {
-            self.descriptionLabel.text = post["caption"] as? String
-            self.feedImageView.file = post["image"] as? PFFile
+            self.descriptionLabel.text = post.caption
+            self.feedImageView.file = post.media
             self.feedImageView.loadInBackground()
+            self.usernameLabel.text = post.author.username
         }
     }
     

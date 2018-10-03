@@ -15,8 +15,9 @@
 		3F883865215181A9001ED9C3 /* instahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F883864215181A9001ED9C3 /* instahTests.swift */; };
 		3F883870215181A9001ED9C3 /* instahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88386F215181A9001ED9C3 /* instahUITests.swift */; };
 		3F88B21221631EF90061F3ED /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88B21121631EF90061F3ED /* Post.swift */; };
+		3F88B2142163F5060061F3ED /* HomeFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88B2132163F5060061F3ED /* HomeFeedTableViewController.swift */; };
+		3F88B21621642ED50061F3ED /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88B21521642ED50061F3ED /* PostDetailViewController.swift */; };
 		3FBBE4EB215719400033AACA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EA215719400033AACA /* LoginViewController.swift */; };
-		3FBBE4ED2157E7030033AACA /* HomeFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EC2157E7030033AACA /* HomeFeedTableViewController.swift */; };
 		3FBBE4EF2157EFB50033AACA /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4EE2157EFB50033AACA /* HomeFeedCell.swift */; };
 		3FBBE4F22157F5B40033AACA /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBE4F12157F5B40033AACA /* ComposeViewController.swift */; };
 		53F097161D3ECBF4AEFA6D29 /* Pods_instahUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B8AF65F2DB0C080BF6A5E5 /* Pods_instahUITests.framework */; };
@@ -56,8 +57,9 @@
 		3F88386F215181A9001ED9C3 /* instahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instahUITests.swift; sourceTree = "<group>"; };
 		3F883871215181A9001ED9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F88B21121631EF90061F3ED /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3F88B2132163F5060061F3ED /* HomeFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedTableViewController.swift; sourceTree = "<group>"; };
+		3F88B21521642ED50061F3ED /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		3FBBE4EA215719400033AACA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3FBBE4EC2157E7030033AACA /* HomeFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedTableViewController.swift; sourceTree = "<group>"; };
 		3FBBE4EE2157EFB50033AACA /* HomeFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
 		3FBBE4F12157F5B40033AACA /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		45E6399DB41D336BE6433417 /* Pods-instahUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instahUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instahUITests/Pods-instahUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				3FBBE4EA215719400033AACA /* LoginViewController.swift */,
-				3FBBE4EC2157E7030033AACA /* HomeFeedTableViewController.swift */,
 				3FBBE4F12157F5B40033AACA /* ComposeViewController.swift */,
+				3F88B2132163F5060061F3ED /* HomeFeedTableViewController.swift */,
+				3F88B21521642ED50061F3ED /* PostDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,12 +406,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBBE4EF2157EFB50033AACA /* HomeFeedCell.swift in Sources */,
-				3FBBE4ED2157E7030033AACA /* HomeFeedTableViewController.swift in Sources */,
+				3F88B21621642ED50061F3ED /* PostDetailViewController.swift in Sources */,
 				3FBBE4EB215719400033AACA /* LoginViewController.swift in Sources */,
 				3FBBE4F22157F5B40033AACA /* ComposeViewController.swift in Sources */,
 				3F883852215181A8001ED9C3 /* ViewController.swift in Sources */,
 				3F88B21221631EF90061F3ED /* Post.swift in Sources */,
 				3F883850215181A8001ED9C3 /* AppDelegate.swift in Sources */,
+				3F88B2142163F5060061F3ED /* HomeFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
