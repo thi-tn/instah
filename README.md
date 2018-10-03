@@ -14,7 +14,11 @@ The following **required** functionality is completed:
 - [X] User can take a photo, add a caption, and post it to "Instagram" (+2pt)
 - [X] User can view the last 20 posts submitted to "Instagram" (+2pt)
 - [X] User can pull to refresh the last 20 posts submitted to "Instagram" (+1pt)
+<<<<<<< HEAD
 - [] User can tap a post to view post details, including timestamp and caption (+2pt)
+=======
+- [X] User can tap a post to view post details, including timestamp and caption (+2pt)
+>>>>>>> origin/master
 
 The following **stretch** features are implemented:
 
@@ -48,7 +52,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/1WbJEfws2KWgWIDLCn/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/PMkuqiGDnm7qS0zO6h/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
